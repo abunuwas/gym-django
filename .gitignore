@@ -1,0 +1,4 @@
+*.pyc
+__pycacye__/*
+.idea/
+venv/
