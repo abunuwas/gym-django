@@ -1,0 +1,23 @@
+- model: auth.User
+  pk: 1
+  fields:
+    username: jose
+    email: j@j
+    password: asdf
+
+- model: routines.Exercise
+  pk: 1
+  fields:
+    name: Bench Press
+    description: blablabla
+
+- model: routines.Set
+  pk: 1
+  fields:
+    timestamp: 2017-10-28 19:38
+    repetitions: 10
+    weight: 20
+    weight_unit: kg
+    performance: good
+    user: 1
+    exercise: 1
