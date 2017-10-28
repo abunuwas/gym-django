@@ -2,3 +2,4 @@ django
 djangorestframework
 djangorestframework-jwt
 psycopg2
+pyyaml
