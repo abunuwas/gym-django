@@ -17,6 +17,10 @@ class SetSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    sets = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Set.objects.all()
+    )
+
     class Meta:
         model = User
         fields = '__all__'

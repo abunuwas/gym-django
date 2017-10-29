@@ -1,4 +1,3 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -17,5 +16,5 @@ class Set(models.Model):
     weight_unit = models.CharField(max_length=20)
     # good | medium | bad
     performance = models.CharField(max_length=20)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey('auth.user', related_name='sets', on_delete=models.CASCADE)
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
