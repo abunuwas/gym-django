@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import permissions, viewsets
+from rest_framework_jwt import authentication
 
 from .models import Set, Exercise
 from .serializers import ExerciseSerializer, SetSerializer, UserSerializer
@@ -8,6 +9,7 @@ from .serializers import ExerciseSerializer, SetSerializer, UserSerializer
 class SetViewSet(viewsets.ModelViewSet):
     serializer_class = SetSerializer
 
+    authentication_classes = (authentication.JSONWebTokenAuthentication,)
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
